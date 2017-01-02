@@ -140,5 +140,5 @@ for t in range(T):
             index = (index + 1) % N
         p3.append(p[index])
     p = p3
-    print eval(myrobot, p2)
+    print eval(myrobot, p)
     #enter code here, make sure that you output 10 print statements.
