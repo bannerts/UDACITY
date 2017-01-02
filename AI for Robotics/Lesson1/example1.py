@@ -16,4 +16,4 @@ def sense(p, Z):
     for i in range(len(p)):
         q[i]=q[i]/s 
     return q
-print sense(p, Z)
+print(sense(p, Z))
