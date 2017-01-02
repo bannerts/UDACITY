@@ -56,7 +56,7 @@ def localize(colors,measurements,motions,sensor_right,p_move):
         for i in range(n_rows):
             p_column = []
             for j in range(n_columns):
-                pmove = p_move * p_in[(i+motion[0])%n_rows][(j+motion[1])%n_columns]
+                pmove = p_move * p_in[(i-motion[0])%n_rows][(j-motion[1])%n_columns]
                 pstay = (1-p_move) * p_in[i][j]
                 p_column.append(pmove+pstay)
             p_row.append( p_column)
