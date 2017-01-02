@@ -1,3 +1,4 @@
-Belief = Probability
-Sense = Product followed by Normalization
-Move = Convolution
+# Localization Summary
+## Belief = Probability
+## Sense = Product followed by Normalization
+## Move = Convolution
