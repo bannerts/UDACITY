@@ -1,5 +1,5 @@
 #Try using your code with a measurement of 'green' and 
-#make sure the resulting probability distribution is correct.
+#make sure the resulting probability distribution is correct. 
 
 p=[0.2, 0.2, 0.2, 0.2, 0.2]
 world=['green', 'red', 'red', 'green', 'green']
