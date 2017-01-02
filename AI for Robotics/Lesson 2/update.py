@@ -22,14 +22,11 @@ sig = 10000.
 #Please print out ONLY the final values of the mean
 #and the variance in a list [mu, sig]. 
 
-mu0 = mu
-sig0 = sig
+
 for i in range(len(measurements)):
     mm = measurements[i]
     mot = motion[i]
-    [mu1, sig1] = update(mu0, sig0, mm, measurement_sig)
-    [mu0, sig0] = predict(mu1, sig1, mot, motion_sig)
+    [mu, sig] = update(mu0, sig0, mm, measurement_sig)
+    [mu, sig] = predict(mu1, sig1, mot, motion_sig)
 
-mu = mu0
-sig = sig0
-print [mu, sig]
+print([mu, sig])
