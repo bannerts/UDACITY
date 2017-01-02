@@ -2,7 +2,7 @@
 
 ## Tracking Intro: Used to estimate the state of a system
 ### Kalman Filter: Continuous with uni-modal distributions (e.g. gausian distribution or similar)
-#####   - kalman filter takes observations with noise and uncertainty and estimates automatically state
+#####   - kalman filter takes observations with noise and uncertainty and estimates state automatically
 #### Gausian Distributions 
 #####   - Gaussian distributions are uni-modal
 #####   - mean
