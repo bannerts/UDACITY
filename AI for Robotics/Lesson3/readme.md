@@ -6,8 +6,8 @@
 #### -- Kalman Filters have quadratic complexity with state space size and are approximate (requires linear systems)
 #### -- Particle Filters have unknown complexity with only approximate estimations
 
-### STATE SPACE
-###
+### PARTICLES: many particles represent various locations in space
+#### - represent 
 ####
 ####
 ####
