@@ -141,11 +141,33 @@ class matrix:
 # Implement the filter function below
 
 def kalman_filter(x, P):
+    n_x = len(x[0])
+    n_P = len(P)
+    R = matrix.identity(n_x/2)
+    u = matrix.zero(1,2)
+    # Create F & H matrices
+    F = matrix.identity(n_x)
+    H = matrix.zero(n_x, n_x/2)
+    for i in range(n_x):
+        if i < n_x/2:
+            F[i][i+n_x/2] = 1
+            H[i][i] = 1
+    
+    # Calculate Measurement Vector         
+    
     for n in range(len(measurements)):
+        Z = H * x
+        y = Z - (H * x)
+        S = H * P * H.transpose() + R
+        K = P * H.transpose() * S.inverse()    
         
         # measurement update
-
+        x = x + (K * y)
+        P = (matrix.identity(n_P) - K * H) * P
+        
         # prediction
+        x = F * x + u
+        P = F * P * F.transpose()
         
     return x,P
 
