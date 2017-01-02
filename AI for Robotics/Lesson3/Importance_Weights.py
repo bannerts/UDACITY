@@ -121,7 +121,7 @@ w = []
 #insert code here!
 for i in range(N):
     # rob = p[i].sense
-    w.append(p[i].measurement_prob(p[i].sense()))
+    w.append(p[i].measurement_prob(Z))
 
 # Now we want to give weight to our 
 # particles. This program will print a
