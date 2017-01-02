@@ -135,35 +135,44 @@ class matrix:
     def __repr__(self):
         return repr(self.value)
 
+    # def change_value(self, x, y, value):
+    #    self.value[x][y] = value
 
 ########################################
 
 # Implement the filter function below
 
 def kalman_filter(x, P):
-    n_x = len(x[0])
-    n_P = len(P)
-    R = matrix.identity(n_x/2)
-    u = matrix.zero(1,2)
+    n_x = len(x.value)
+    n_P = len(P.value[0])
+    R = matrix([[0]])
+    R.identity(n_x/2)
+    u = matrix([[0]])
+    u.zero(n_x,1)
     # Create F & H matrices
-    F = matrix.identity(n_x)
-    H = matrix.zero(n_x, n_x/2)
+    F = matrix([[0]])
+    F.identity(n_x)
+    H = matrix([[0]])
+    H.zero(n_x/2, n_x)
     for i in range(n_x):
-        if i < n_x/2:
-            F[i][i+n_x/2] = 1
-            H[i][i] = 1
+        if (i < n_x/2):
+            F.value[i][i+n_x/2] =  1
+            H.value[i][i] = 1
     
     # Calculate Measurement Vector         
-    
+    Z = matrix([[0]])
+    Z.zero(1, 1)
+    IDE = matrix([[0]])
+    IDE.identity(n_P)   
     for n in range(len(measurements)):
-        Z = H * x
+  
+        # measurement update
+        Z.value[0][0] = measurements[n]
         y = Z - (H * x)
         S = H * P * H.transpose() + R
-        K = P * H.transpose() * S.inverse()    
-        
-        # measurement update
+        K = P * H.transpose() * S.inverse()  
         x = x + (K * y)
-        P = (matrix.identity(n_P) - K * H) * P
+        P = (IDE - K * H) * P
         
         # prediction
         x = F * x + u
