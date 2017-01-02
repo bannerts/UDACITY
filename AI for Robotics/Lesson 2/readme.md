@@ -11,7 +11,7 @@
 #### - Parameter Update: multiply two gausians (prior and measurement) using Bayes Rule
 ##### -- New mean is weighted sum of old means (normalized): 
 ##### --- mu_new = (mu_prior * var_measurement + var_prior * mu_measurement) / (var_measurement + var_prior)
-##### -- New variance is combined similar to resistors in parallel (smaller value)
+##### -- New variance is combined similar to resistors in parallel (results in a smaller value)
 ##### --- var_new = 1 / ((1/var_prior) + (1/var_measurement))
 
 ####
