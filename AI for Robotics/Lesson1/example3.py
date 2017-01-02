@@ -82,15 +82,13 @@ def localize(colors,measurements,motions,sensor_right,p_move):
                     pmult = p_sensor
                 else:
                     pmult = 1.0-p_sensor
-                pright = p_in[i][j] * p_sensor * measurement == colors
-                pright = (1-p_move) * p_in[i][j]
                 p_column.append(p_in[i][j] * pmult)
             p_row.append(p_column)
         return normalize(p_row)
     
     for n in range(len(motions)):
         p = movement(p, motions[n], p_move)
-        p = measurement(colors, p, measurements[n], p_sensor)
+        p = measurement(colors, p, measurements[n], sensor_right)
     
     return p
 
