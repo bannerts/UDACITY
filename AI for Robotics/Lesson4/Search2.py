@@ -77,6 +77,7 @@ def search(grid,init,goal,cost):
                             expand1[x2][y2] = [[x, y], delta_name[i]]
     if found:
         last = goal
+        expand[last[0]][last[1]] = '*'
         while (last != init):
             xl = last[0]
             yl = last[1]
