@@ -88,5 +88,6 @@ def optimum_policy(grid,goal,cost):
                 policy[i+1][j+1] = delta_name[1]
     return policy
 
+
 policy = optimum_policy(grid,goal,cost)
 print policy
