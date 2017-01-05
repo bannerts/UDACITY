@@ -62,6 +62,7 @@ def optimum_policy(grid,goal,cost):
     
     for i in range(len(value)-1):
         for j in range(len(value[i])-1):
+            
             if value[i][j] == 99:
                 pass
             elif value[i][j] == value[i+1][j] + 1:
@@ -86,6 +87,7 @@ def optimum_policy(grid,goal,cost):
                 policy[i+1][j+1] = delta_name[0]                
             elif value[i+1][j] + 1 == value[i+1][j+1]:  
                 policy[i+1][j+1] = delta_name[1]
+    policy[goal[0]][goal[1]] = '*'
     return policy
 
 
