@@ -58,7 +58,13 @@ def compute_value(grid,goal,cost):
                     elif dvalue[x][y] > val:
                         dvalue[x][y] = val
                         open.append([val, [x, y]])
-                        
+
+    for i in range(len(dvalue)):
+        for j in range(len(dvalue[i])):
+            if dvalue[i][j] == 0:
+                if goal != [i, j]:
+                    dvalue[i][j] = 99
+
     value = dvalue                    
     return value 
 
