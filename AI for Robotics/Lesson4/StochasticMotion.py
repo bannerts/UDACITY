@@ -39,6 +39,29 @@ def stochastic_value(grid,goal,cost_step,collision_cost,success_prob):
     value = [[collision_cost for col in range(len(grid[0]))] for row in range(len(grid))]
     policy = [[' ' for col in range(len(grid[0]))] for row in range(len(grid))]
     
+    def cost(x, y):
+        if  0 <= x and x < len(grid):
+            if 0 <= y and y < len(grid[x]):
+                if grid[x][y] == 0:
+                    return value[x][y]
+        return collision_cost    
+    
+    value[goal[0]][goal[1]] = 0
+    changed = True
+    while changed:
+        delta = 0
+        for i in range(len(grid)):
+            for j in range(len(grid[i])):
+                v = cost(i,j)
+                nby = [cost(i-1, j), cost(i, j-1), cost(i+1, j), cost(i, j+1)]
+                lnby = len(nby)
+                for k in range(lnby):
+                    vk = cost_step + failure_prob*(nby[(k-1)%lnby]+nby[(k+1)%lnby]) + success_prob * nby[k]
+                    if vk < v:
+                        value[i][j] = vk
+                        delta += v-vk
+        if delta < 0.1:
+            changed = False
     return value, policy
 
 # ---------------------------------------------
