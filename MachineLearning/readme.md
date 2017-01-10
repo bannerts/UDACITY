@@ -15,6 +15,8 @@
 #### clf = tree.DecisionTreeClassifier(min_samples_split=2)
 #### clf.fit(features_train, labels_train)
 
+# Regressions
+
 # Unsupervised Classification Algorithms
 ## 
 #### 
