@@ -1,2 +1,8 @@
 
-Naive Bayes
+# Naive Bayes
+##
+##
+
+# Support Vector Machines
+##
+##
