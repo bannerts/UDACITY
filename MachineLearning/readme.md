@@ -1,8 +1,13 @@
+# Supervised Classification Algorithms
 
-# Naive Bayes
-##
-##
+## Naive Bayes
+###
+###
 
-# Support Vector Machines
-##
-##
+## Support Vector Machines
+###
+###
+
+## Decision Trees
+###
+###
