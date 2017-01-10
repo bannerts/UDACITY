@@ -16,7 +16,10 @@
 #### clf.fit(features_train, labels_train)
 
 # Regressions
+## Linear Regression
+## Removing Outliers
 
 # Unsupervised Classification Algorithms
-## 
+
+## k-means algorithm
 #### 
