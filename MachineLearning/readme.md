@@ -19,7 +19,22 @@
 ## Linear Regression
 ## Removing Outliers
 
-# Unsupervised Classification Algorithms
+# Unsupervised Learning: 
+## Clustering
+### k-means
+#### - (1) Assign
+#### - (2) Optimize
+####
+## Feature Scaling
+### - Scales feature between 0 and 1
+## Dimensionality Reduction
 
-## k-means algorithm
-#### 
+# Text Learning
+### Bag of Words
+### Stemmer
+#### - stemming should be done before 'bag of words' transformation
+### TfIdf : term frequency, inverse document frequency
+#### - Tf - Term frequency
+#### - Idf - Weighting by how often word occurs in corpus
+#### - TfIdf provides bigger weights to words which are rare
+
