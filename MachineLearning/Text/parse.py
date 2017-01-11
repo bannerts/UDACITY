@@ -5,7 +5,7 @@ def parseOutText(Data, FILE = False, STEMMER = True, LANGUAGE = 'english'):
 	""" Data (as text by default or file), parse out all text and use stemmer (nltk.stem.snowball.SnowballStemmer). 
 	"""
 	# Transform Data into content
-	if Not FILE:
+	if not FILE:
 		## remove punctuation
 		text_string = Data.translate(string.maketrans("", ""), string.punctuation)
 	else:
