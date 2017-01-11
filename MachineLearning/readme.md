@@ -46,4 +46,7 @@
 ## Dimensionality reduction
 
 # Cross Validation
+## k-fold Cross Validation
+### - parttion dataset into k bins of equal size
+### - Run k different learning experiments averaging test results
 
