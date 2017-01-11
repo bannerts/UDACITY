@@ -38,3 +38,8 @@
 #### - Idf - Weighting by how often word occurs in corpus
 #### - TfIdf provides bigger weights to words which are rare
 
+# Feature Selection
+## Regularization
+### Overfitting
+
+# Principle Component Analysis
