@@ -27,7 +27,7 @@
 ####
 ## Feature Scaling
 ### - Scales feature between 0 and 1
-## Dimensionality Reduction
+
 
 # Text Learning
 ### Bag of Words
@@ -43,3 +43,4 @@
 ### Overfitting
 
 # Principle Component Analysis
+## Dimensionality reduction
