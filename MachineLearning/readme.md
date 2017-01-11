@@ -44,3 +44,6 @@
 
 # Principle Component Analysis
 ## Dimensionality reduction
+
+# Cross Validation
+
