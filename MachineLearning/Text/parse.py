@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 from nltk.stem.snowball import SnowballStemmer
 import string
 
@@ -10,13 +12,13 @@ def parseOutText(Data, FILE = False, STEMMER = True, LANGUAGE = 'english'):
 		text_string = Data.translate(string.maketrans("", ""), string.punctuation)
 	else:
 		## Data is a file
-    	Data.seek(0)  ### go back to beginning of file (annoying)
-    	all_text = Data.read()
+		Data.seek(0)  ### go back to beginning of file (annoying)
+		all_text = Data.read()
 		### split off metadata
 		content = all_text.split("X-FileName:")
 		if len(content) > 1:
-       		### remove punctuation
-       		text_string = content[1].translate(string.maketrans("", ""), string.punctuation)
+			## remove punctuation
+			text_string = content[1].translate(string.maketrans("", ""), string.punctuation)
 	words = ''
 	stemmer = SnowballStemmer(language)
 	for word in string.split(text_string):
@@ -26,3 +28,11 @@ def parseOutText(Data, FILE = False, STEMMER = True, LANGUAGE = 'english'):
 		else:
 			words += word + ' '
 	return words
+
+def main():
+	ff = open("../text_learning/test_email.txt", "r")
+	text = parseOutText(ff)
+	print text
+
+if __name__ == '__main__':
+	main()
